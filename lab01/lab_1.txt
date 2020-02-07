@@ -1,0 +1,27 @@
+1.1
+  b
+    i. GPS problem solver is implemented as a function
+    ii. initial_states is a list, goal_states is an iterable (it is iterated over with "for", but we don't see any type-specific
+        methods like "append", and we don't see any indication that it has to be mutable or has to be immutable, \
+        so we can't say a specific type. Most likely a list or a tuple.), and operators is a list of dictionaries with
+        keys "action", "add", and "delete"
+    iii. Recursion: achieve_all calls achieve, which calls apply_operator, which calls achieve_all. achieve returns None
+         if no such operator is found or if infinite recursion is detected in the goal stack
+  d
+    i. A monkey is in a room. Suspended from the ceiling is a bunch of bananas, beyond the monkey's reach. However,
+       in the room there are also a chair and a stick. The ceiling is just the right height so that a monkey standing
+       on a chair could knock the bananas down with the stick. The monkey knows how to move around,
+       carry other things around, reach for the bananas, and wave a stick in the air.
+       What is the best sequence of actions for the monkey?
+       The code has a slight modification: the stick is not used. The monkey is able to grab the bananas by hand.
+       Also, the monkey is holding a ball that it must first drop to be able to grab the bananas. The code follows
+       the spirit of the puzzle so I would say it is a faithful implementation.
+       ii.
+       iii. In order to not be hungry, the monkey needs to eat bananas. In order to eat bananas, the monkey needs to
+            grasp bananas. In order to grasp bananas, the monkey needs to be empty-handed and at the bananas.
+            In order to be empty-handed, the monkey needs to drop the ball. In order to be at the bananas, the monkey
+            needs to climb on chair. In order to climb on chair, the monkey needs to be at middle room and needs the
+            chair to be at middle room. In order to satisfy those preconditions, the monkey needs to push chair
+            from door to middle room.
+       iv. acting rationally
+       v. yes
