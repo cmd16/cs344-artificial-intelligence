@@ -3,11 +3,11 @@ from gps import gps
 problem = {
     "start_a": ["space on b", "b on table", "space on c", "c on a", "a on table", "space on table"],
     "finish_a": ["space on c", "c on table", "space on a", "a on table", "space on b", "b on table"],
-    "finish_a1": ["space on b", "b on table", "space on a", "a on table", "space on c", "c on table"],
+    "finish_a1": ["space on b", "b on table", "space on a", "a on table", "space on c", "c on table"],  # problem: had to reorder goals
     "start_b": ["space on c", "c on table", "space on b", "b on table", "space on a", "a on table"],
     "start_b1": ["space on a", "a on table", "space on b", "b on table", "space on c", "c on table"],
-    "finish_b": ["c on table", "b on c", "a on b", "space on a", "space on table"],
-    "finish_b1": ["space on a", "a on b", "b on c", "c on table", "space on table"],
+    "finish_b": ["c on table", "b on c", "a on b", "space on a"],
+    "finish_b1": ["space on a", "a on b", "b on c", "c on table", "space on table"],  # problem: ops didn't add state "space on table"
 
     # settings for the Sussman Anamoly, see PAIP, pp. 142. 
     "sussmanStart": ["space on c", "c on a", "a on table", "b on table", "space on table"],
@@ -15,18 +15,17 @@ problem = {
 
     "ops": [
         {
-            "action": "move a from b to c",
+            "action": "move b from table to c",
             "preconds": [
-                "space on a",
+                "space on b",
                 "space on c",
-                "a on b"
+                "b on table"
             ],
             "add": [
-                "a on c",
-                "space on b"
+                "b on c"
             ],
             "delete": [
-                "a on b",
+                "b on table",
                 "space on c"
             ]
         },
@@ -43,67 +42,6 @@ problem = {
             "delete": [
                 "a on table",
                 "space on b"
-            ]
-        },
-        {
-            "action": "move a from b to table",
-            "preconds": [
-                "space on a",
-                "space on table",
-                "a on b"
-            ],
-            "add": [
-                "a on table",
-                "space on b"
-            ],
-            "delete": [
-                "a on b"
-            ]
-        },
-        {
-            "action": "move a from c to b",
-            "preconds": [
-                "space on a",
-                "space on b",
-                "a on c"
-            ],
-            "add": [
-                "a on b",
-                "space on c"
-            ],
-            "delete": [
-                "a on c",
-                "space on b"
-            ]
-        },
-        {
-            "action": "move a from table to c",
-            "preconds": [
-                "space on a",
-                "space on c",
-                "a on table"
-            ],
-            "add": [
-                "a on c"
-            ],
-            "delete": [
-                "a on table",
-                "space on c"
-            ]
-        },
-        {
-            "action": "move a from c to table",
-            "preconds": [
-                "space on a",
-                "space on table",
-                "a on c"
-            ],
-            "add": [
-                "a on table",
-                "space on c"
-            ],
-            "delete": [
-                "a on c"
             ]
         },
         {
@@ -169,21 +107,6 @@ problem = {
             ]
         },
         {
-            "action": "move b from table to c",
-            "preconds": [
-                "space on b",
-                "space on c",
-                "b on table"
-            ],
-            "add": [
-                "b on c"
-            ],
-            "delete": [
-                "b on table",
-                "space on c"
-            ]
-        },
-        {
             "action": "move b from c to table",
             "preconds": [
                 "space on b",
@@ -196,6 +119,83 @@ problem = {
             ],
             "delete": [
                 "b on c"
+            ]
+        },
+        {
+            "action": "move a from b to c",
+            "preconds": [
+                "space on a",
+                "space on c",
+                "a on b"
+            ],
+            "add": [
+                "a on c",
+                "space on b"
+            ],
+            "delete": [
+                "a on b",
+                "space on c"
+            ]
+        },
+        {
+            "action": "move a from b to table",
+            "preconds": [
+                "space on a",
+                "space on table",
+                "a on b"
+            ],
+            "add": [
+                "a on table",
+                "space on b"
+            ],
+            "delete": [
+                "a on b"
+            ]
+        },
+        {
+            "action": "move a from c to b",
+            "preconds": [
+                "space on a",
+                "space on b",
+                "a on c"
+            ],
+            "add": [
+                "a on b",
+                "space on c"
+            ],
+            "delete": [
+                "a on c",
+                "space on b"
+            ]
+        },
+        {
+            "action": "move a from table to c",
+            "preconds": [
+                "space on a",
+                "space on c",
+                "a on table"
+            ],
+            "add": [
+                "a on c"
+            ],
+            "delete": [
+                "a on table",
+                "space on c"
+            ]
+        },
+        {
+            "action": "move a from c to table",
+            "preconds": [
+                "space on a",
+                "space on table",
+                "a on c"
+            ],
+            "add": [
+                "a on table",
+                "space on c"
+            ],
+            "delete": [
+                "a on c"
             ]
         },
         {
@@ -292,7 +292,7 @@ problem = {
         }
     ]
 }
-#
+
 def main():
     start_a = problem['start_a']
     finish_a = problem['finish_a']
