@@ -1,10 +1,13 @@
 from gps import gps
 
 problem = {
-    "start_a": ["space on table", "space on b", "b on table", "c on a", "a on table"],
-    "finish_a": ["space on b", "b on table", "space on a", "a on table", "space on c", "c on table"],
-    "start_b": ["space on a", "a on table", "space on b", "b on table", "space on c", "c on table"],
-    "finish_b": ["space on a", "a on b", "b on c", "c on table", "space on table", "space on table"],
+    "start_a": ["space on b", "b on table", "space on c", "c on a", "a on table", "space on table"],
+    "finish_a": ["space on c", "c on table", "space on a", "a on table", "space on b", "b on table"],
+    "finish_a1": ["space on b", "b on table", "space on a", "a on table", "space on c", "c on table"],
+    "start_b": ["space on c", "c on table", "space on b", "b on table", "space on a", "a on table"],
+    "start_b1": ["space on a", "a on table", "space on b", "b on table", "space on c", "c on table"],
+    "finish_b": ["c on table", "b on c", "a on b", "space on a", "space on table"],
+    "finish_b1": ["space on a", "a on b", "b on c", "c on table", "space on table"],
 
     # settings for the Sussman Anamoly, see PAIP, pp. 142. 
     "sussmanStart": ["space on c", "c on a", "a on table", "b on table", "space on table"],
