@@ -1,0 +1,22 @@
+2.1
+  a. Hill-climbing and simulated annealing solve the problem perfectly.
+  b. Hill-climbing is faster.
+  c. The starting value for x does not stop either algorithm from finding the solution, but it does make hill-climbing
+     slower.
+  d. If the delta is too high, it is possible to miss the correct answer because you won't step all the way to the solution (hill-climbing)
+     or you don't stay on the solution (simulated annealing).
+  e. exp_schedule is setting up the temperature that decreases over time
+
+2.2
+  a. Hill-climbing finds the closest local maximum. Sometimes simulated annealing sometimes finds a local maximum,
+     sometimes it finds a global maximum
+  b. Yes. Hill-climbing (and to some extent simulated annealing) find the local maximum close to the starting value
+  c. With a higher step size, hill-climbing gets closer to the solution (that it would with a lower delta) if it starts near 0,
+     but it is more likely to stay at the initial value if the initial value is high. Simulated annealing gets closer
+     to the solution but is also more likely to go out of bounds (I still haven't figured out how to tell it it must be
+     between 0 and 30).
+  d. Minimum 0, maximum 30. Simulated annealing does better.
+
+2.3
+
+2.4
