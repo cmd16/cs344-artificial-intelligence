@@ -18,5 +18,11 @@
   d. Minimum 0, maximum 30. Simulated annealing does better.
 
 2.3
+  a. Both algorithms benefit from the random restarts. Hill-climbing benefits because we minimize the effect of starting
+     in a bad place. Simulated annealing benefits because the weirdness of any particular run gets averaged out.
+  b. When I did 50 trials, 4 trials had to be removed because the simulated annealing result was invalid. Of the 46 trials
+     I counted, hill-climbing got 16.759 on average, and simulated annealing got 19.618 on average.
+  c. Simulated annealing does better because it was already better to begin with; the random restarts don't benefit
+     hill-climbing enough to make hill-climbing better.
 
 2.4
