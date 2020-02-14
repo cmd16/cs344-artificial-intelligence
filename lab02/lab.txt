@@ -26,3 +26,10 @@
      hill-climbing enough to make hill-climbing better.
 
 2.4
+  a. Beam search makes the most sense for simulated annealing because it could speed up the algorithm and get it to the
+     solution faster.
+  b. If we're talking parallel programming, then we could store one state per thread. Other than that I have no idea.
+     We barely talked about beam search, and the textbook doesn't have much to say either.
+  c. Beam search is different from random restarts because with random restarts, the trials are independent, whereas with
+     beam search, where to search next is dependent on what you found before. I don't know how to implement it.
+     Maybe use the solution from the previous trial as the starting value for the next trial?
