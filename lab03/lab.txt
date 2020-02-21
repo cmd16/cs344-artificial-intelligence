@@ -4,15 +4,12 @@
         AC3 fails quickly on easy_fig64a. Backtracking search is slow, but correct. It's slow because it's probably not very
         smart about choosing which states to look at next. Backtracking search takes too long for harder_aima_csp.
         min_conflicts is slow and fails for easy_fig64a. Maybe this is because there is no backtracking?
-
-
     b. What effect does configuring the settings for backtracking have on the results? Try the following:
         1. Set the variable/value ordering (i.e., the select_unassigned_variable parameter) to
            first-unassigned-variable (the default) or minimum-remaining-values (i.e., mrv).
            This slows down the algorithm a lot.
         2. Set the inference (i.e., the inference parameter) to forward-checking (i.e., forward_checking).
             This speeds up the algorithm a lot. I can all the puzzles to run.
-
     c. Which, if any, of these settings should work best for sudoku? What combination of settings actually works the best?
         I would have expected mrv to work well for sudoku (it's what humans use), and I don't really understand forward_checking.
         forward_checking is a very good setting to use. I can't tell whether the backtracking algorithm (using forward checking)
@@ -24,9 +21,13 @@ Pull queens.py and try running each of the algorithms with various values for n.
         I tried increasing n by a power of 2 until the algorithm seemed to fail (or take too long).
         min_conflicts took too long at 8192
         AC3 failed even on 8
-        Backtracking search without any settings took too long on 32. Backtracking search with mrv and forward_checking
-        took too long on 256
-
+        Backtracking search without any settings took too long on 32. With forward_checking took too long on 32.
+        With mrv and forward_checking took too long on 256. With mrv took too long on 256.
     b. What backtracking settings work the best? Why?
+        mrv is the most important setting. It doesn't look like forward_checking helps much. I don't know why.
     c. How many steps does Min-Conflicts require to do its work? Why?
-        I don't know. Use parameter max_steps
+        max_steps is 100000 by default. I went down by a factor of 10 each time. When I got to max_steps = 10, the
+        algorithm failed at n=32. When I moved max_steps up to 25, the algorithm worked for n=32. For n=64, I needed max_steps=45.
+        I tried running the algorithm multiple times and determined that these numbers of max steps that are low do not
+        always guarantee a solution. I would say you want max_steps to be at least 100. Min-conflicts needs to try lots of
+        different cell combinations.
