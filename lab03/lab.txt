@@ -36,3 +36,24 @@ Pull queens.py and try running each of the algorithms with various values for n.
         I tried running the algorithm multiple times and determined that these numbers of max steps that are low do not
         always guarantee a solution. I would say you want max_steps to be at least 100. Min-conflicts needs to try lots of
         different cell combinations.
+
+3.3
+a. Compare and contrast the specifications for CSP (i.e., csp.CSP) and traditional problems (i.e., search.Problem).
+   Be sure to consider the nature of states, domains, actions, results and goal tests.
+
+   CSP has variables that have domains. There are only two kind of actions - assigning a value to a variable from that variable's domain,
+   and removing a value from a variable's domain. (The resulting domain/value of each variable can be considered the result.)
+   In a state, each variable has a certain domain of possible values. To test the goal, we simply see if every variable
+   is assigned its one value (and whatever else it is we need to do to check that the constraints are not violated).
+   If we've tried everything we can and still a variable has no possible values, we can't solve the problem.
+
+   Traditional problems have states (maybe more than one state at a time). There isn't really a concept of domains, unless
+   you want to consider the subset of actions that are currently possible to be a domain. Actions change one or more states,
+   and that new configuration of states is the result. To test the goal, you see if you have reached the goal state(s) yet.
+b. Compare and contrast the nature of the heuristics deployed in traditional and constraint-based problem solving.
+
+   CSP heuristics are about pruning - once you have chosen a value for a variable, that eliminates some possibilities from
+   the domains of other variables.
+
+   Traditional search applies heuristics for deciding which variable to look at next and which value to try if there are
+   multiple possible values.
