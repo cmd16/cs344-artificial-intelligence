@@ -1,0 +1,40 @@
+4.3
+
+a. Drug testing — Given that a drug test is 99% sensitive (i.e., drug users get positive results 99% of the time)
+   and 98% specific (i.e., non drug users get negative results 98% of the time) and also that 8.9% of Americans are
+   drug users of some sort, compute the following probabilities:
+
+   - P(user) = 0.089
+   - P(test|user) = 0.99
+   - P(~test|user) = 1 - 0.99 = 0.01
+   - P(test|~user) = 1 - 0.98 = 0.02
+   - P(user|test) = (P(test|user) * P(user))/P(test) = (0.99 * 0.089) / P(test)
+     P(test) = P(test|user)*P(user) + P(test|~user)*P(~user) = 0.99 * 0.089 + 0.02 * 0.911
+     P(user|test) = (0.99*0.089) / (0.99*0.089 + 0.02*0.911) = 0.8286
+
+    With normalization:
+    <P(test|user) * P(user), P(test|~user) * P(user)>
+    <0.99*0.089, 0.02*0.911> = <0.08811, 0.01822>
+    normalize (divide by the sum of the two)
+    <0.08811, 0.01822> / (0.08811+0.01822) = <0.08811, 0.01822>/ 0.1063
+    <0.8289, 0.1714>
+
+    Personally I like that first way I did it (without the normalization better) because it's easier to write
+    and I can just put the whole thing into a calculator (rather than using a calculator at intermediate steps like
+    I did with normalization because else it's just too much to write) and thus reduce floating point arithmetic rounding errors.
+
+b. Breast cancer — 1% of women at age forty who participate in routine screening have breast cancer.
+   80% of women with breast cancer will get positive mammographies. 9.6% of women without breast cancer
+   will also get positive mammographies. A woman in this age group is found to have a positive mammography
+   in a routine screening. What are the chances that she has/doesn't have cancer?
+
+   P(screen|cancer) = 0.80
+   P(cancer) = 0.01
+   P(screen|~cancer) = 0.096
+   P(~cancer) = 0.99
+
+   P(cancer|screen) = (P(screen|cancer) * P(cancer)) / (P(screen|cancer)*P(cancer) + P(screen|~cancer)*P(~cancer))
+   = (0.80 * 0.01) / (0.80*0.01 + 0.096*0.99)
+   = 0.07763
+
+   P(~cancer|screen) = 1 - P(cancer|screen) = 0.9224
