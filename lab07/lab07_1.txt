@@ -1,0 +1,14 @@
+a.
+  1. cities['large_with_saint'] = (cities['City name'].apply(lambda name: name.startswith('San')) & cities['Area square miles'] > 50)
+  2. Indexes are usually pulled from the data. Sometimes you may want to make sure a certain set of indexes is included
+     (for example, days of the year), even if not every index has data in the dataset for it. That way you don't have to
+     worry about sanitizing the input.
+
+b. Numpy is good at manipulating data, but Pandas is better at reading in, storing, and modifying datasets. In most cases,
+   you would want to use Pandas and Numpy in combination
+
+c. When you want a random subset of the data, either because the data is too large to work with all of it,
+   or because you want to break the data into a train/test split. Or when you want to use some algorithm that
+   cares about order (e.g., something like hill-climbing), you might do this because you don't want the algorithm to get
+   distracted by other things.
+

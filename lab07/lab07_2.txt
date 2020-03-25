@@ -1,0 +1,21 @@
+a. Categorical data is data that fits into discrete categories. For example, text labels (e.g., state), numbers
+   that are categories (e.g., district numbers), and true/false.
+   Numerical data is data that is a number and that you want to treat as a number. If data is numerical, then typically
+   measures like min, max, and mean make sense when applied to the data.
+
+b.
+  1. train_model(learning_rate=0.001, steps=10, batch_size=100) RMSE: 166.32
+  2. train_model(learning_rate=0.00002, steps=1000, batch_size=5, input_feature="population") RMSE: 176.06
+
+c. Learning rate: larger learning rate means you take larger steps (you travel further along the gradient in each step).
+   Batch size: how many examples to use when evaluating the loss function. Steps: the number of steps to take.
+
+   There are no hard and fast rules about how to set the hyperparameters because what settings are best depends on your data.
+   There are a few rules of thumb, though, as stated by Google:
+   - Training error should steadily decrease, steeply at first, and should eventually plateau as training converges.
+   - If the training has not converged, try running it for longer.
+   - If the training error decreases too slowly, increasing the learning rate may help it decrease faster.
+   - But sometimes the exact opposite may happen if the learning rate is too high.
+   - If the training error varies wildly, try decreasing the learning rate.
+   - Lower learning rate plus larger number of steps or larger batch size is often a good combination.
+   - Very small batch sizes can also cause instability. First try larger values like 100 or 1000, and decrease until you see degradation.
