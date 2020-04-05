@@ -1,0 +1,16 @@
+a. What good did the K-fold validation do in this exercise?
+If we didn't do it, the validation set would bee too small and the validation scores
+would have a high variance with regard to the validation split. K-fold validation allows us to
+average the results of multiple validation sets and thus get a validation score that is more robust.
+
+b. Chollet claims that it would be problematic to use data values with “wildly different ranges”. Why is this?
+Because then the model would have to do a lot more work scaling things and so it wouldn't learn as well
+(because a significant portion of its effort would be devoted to scaling).
+
+c. Chollet also claims that smaller datasets “prefer” smaller networks. Do you agree? Explain your answer.
+I agree. If your network is too big for your dataset, you are prone to overfitting because you can measure all sorts of
+small, insignificant details that are peculiar to the specific sample you are working with. Having a smaller network
+forces the model to focus on the most important, significant patterns.
+
+d. Try networks with one more and one less hidden layer, and wider or narrower layers. Do any of your alternatives do better than the suggested architecture? Why or why not?
+I was not able to get to this part; I had some issues running the notebook.
