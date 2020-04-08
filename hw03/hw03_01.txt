@@ -1,0 +1,29 @@
+Compute the information gain provided by the “price“ attribute from the restaurant domain.
+Use this restaurant data (AIMA, Figure 18.3). Would this question be better than either of the questions discussed in
+class (i.e., “Patrons?”, “Type?”?
+
+p is number of positive examples, n is number of negative examples
+
+p_k and n_k are number of positive and negative examples in subset E_k of the training set E
+
+B(q) is the entropy of a Boolean random variable that is true with probability q:
+B(q) = -(q log_2(q) + (1-q) log_2(1-q))
+
+Remainder (A) = sum(k=1, to=d, (p_k + n_k)/ (p + n) B(p_k / (p_k + n_k)))
+
+Gain(A) = B(p/(p+n)) − Remainder(A)
+
+For this particular domain, B(p/(p+n)) = 1
+
+
+Gain(Patrons) = 1 - [2/12 B(0/2) + 4/12 B(4/4) + 6/12 B(2/6)] = 0.541 bits
+Gain(Type) = 1 - [2/12 B(1/2) + 2/12 B(1/2) + 4/12 B(2/4)] = 0 bits
+
+Price
+$:   2,3,4,7,9,11,12 (2,3,4,12 will wait)
+$$:  6,8 (6,8 will wait)
+$$$: 1,5,10 (1 will wait)
+
+Gain(Price) = 1 - [7/12 B(4/7) + 2/12 B(2/2) + 3/12 B(1/3)] = 1 - [7/12 (0.9852) + 2/12 (0) + 3/12 (0.9183)] = 0.195725
+
+This question would not be better than Patrons, but it would be better than Type.
