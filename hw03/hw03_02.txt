@@ -1,0 +1,6 @@
+In class, we attempted to create by hand a neural network that computes the XOR function.
+If this was possible, see if you can simplify the network we built. Consider relaxing the conventions of densely-connected, sequential layers.
+If it was not possible, give a full explanation why it can’t be done.
+
+I couldn't figure out where in class we did this so I didn't have the reference necessary to complete this question.
+I tried to ask you in Microsoft Teams on Monday but you never responded.
