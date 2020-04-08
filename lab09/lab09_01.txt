@@ -1,0 +1,11 @@
+a. Linear regression is not very effective. The RMSE barely changes over all the periods; the model isn't learning
+it's just making slight variations on one mediocre solution.
+
+b. LogLoss takes probability/confidence into consideration. If you predicted the wrong answer with 0.999 confidence,
+you are penalized more than if you predicted the wrong answer with 0.9 confidence. L2Loss doesn't pay as much attention to
+probability/confidence.
+
+c. Unlike linear regression, logistic regression actually learns. LogLoss consistently goes down with more periods.
+
+d. AUC: 0.81,
+   learning_rate=0.000005, steps=20000, batch_size=500

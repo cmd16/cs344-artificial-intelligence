@@ -1,0 +1,9 @@
+a. We want to make the model smaller so we don't run out of space, but we don't want to lose information.
+   Regularizing with respect to sparsity helps with this.
+
+b. L1Regularization encourages features to have zero weights. For linear models such as regression, a zero weight is
+   equivalent to not using the corresponding feature at all (so that would be sparsity). In addition to avoiding overfitting,
+   the resulting model will be more efficient.
+
+c. LogLoss: 0.25, Model size: 575
+   regularization_strength=0.8
