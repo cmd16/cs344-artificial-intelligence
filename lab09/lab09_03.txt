@@ -1,0 +1,20 @@
+1 hidden layer: training (loss and accuracy) is about the same. Validation loss is lower and accuracy is about the same.
+What this says is that we have less overfitting. So I would say this performs better.
+
+3 hidden layers: training loss and training accuracy fluctuates more in later epochs than it did with 2 hidden layers.
+Validation loss is higher and accuracy is about the same. So this performs worse, probably for the same reason 1 hidden layer did better.
+
+32 hidden units: similar results to 3 hidden layers.
+
+64 hidden units: even worse! Validation loss is almost 1. Validation accuracy fluctuates a fair bit, but ends up at about the same value
+we've seen for all the models. Also fluctuation in training loss and accuracy.
+
+8 hidden units: lower validation loss (about the same as with 1 hidden layer), slightly higher validation accuracy.
+Training loss and training accuracy are about the same.
+
+mse loss: looks like training loss and validation loss are closer together? That might just be scaling though. Not clearly better, but not clearly worse.
+
+tanh: similar results to 3 hidden layers.
+
+So there seems to be some evidence that a smaller model (fewer hidden layers or fewer hidden units) would improve validation scores
+(presumably by decreasing overfitting). Making the model bigger is probably a bad idea.
