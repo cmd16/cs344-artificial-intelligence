@@ -2,5 +2,6 @@ In class, we attempted to create by hand a neural network that computes the XOR 
 If this was possible, see if you can simplify the network we built. Consider relaxing the conventions of densely-connected, sequential layers.
 If it was not possible, give a full explanation why it can’t be done.
 
-I couldn't figure out where in class we did this so I didn't have the reference necessary to complete this question.
-I tried to ask you in Microsoft Teams on Monday but you never responded.
+You gave the diagram of the neural network we built in class. I tried to look at simplifying it, but I realized I'm still lost.
+I kind of get how the network works, but I don't know how to simplify it. And I don't know how I could relax
+the conventions of densely-connected, sequential layers in such a way that it's still a network. Maybe I don't understand well enough what a network is.
