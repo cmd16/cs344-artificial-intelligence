@@ -1,0 +1,27 @@
+Exercise 1:
+
+What’s the size/shape of the cats/dogs datasets?
+
+total training cat images: 1000
+total training dog images: 1000
+total validation cat images: 500
+total validation dog images: 500
+
+So, in total 1500 cat images and 1500 dog images. We set aside 500 from each category for testing.
+
+How does the first CNN compare with the one we did in class.
+
+The first CNN (Google): Our first convolution extracts 16 filters, the following one extracts 32 filters, and the last one extracts 64 filters.
+In class: 32, 64, and 64.
+Google uses a special image input `img_input = layers.Input(shape=(150, 150, 3))` for the first layer
+(150x150 for the image pixels, and 3 for the three color channels: R, G, and B [apparently alpha isn't stored here? or we don't care about it?]). We didn't do that in class.
+Our code used model.add, Google keeps assigning each layer to x and then feeding that x into the next layer
+Google's fully connected layers are a relu with 512 units and a sigmoid with 1 unit. We used a relu with 64 units and a softmax with 10 units.
+The reason for the difference in those last layers is because Google is doing binary classification (0 or 1 aka cat or dog)
+whereas we are doing classification into 10 categories.
+
+Can you see any interesting patterns in the intermediate representations?
+
+Several of the images (especially the ones on the left) look to me like long-haired dogs, which makes me wonder what the data looks like (what variety of dog images were there?)
+Most the images that have discernable shapes seem to be in a sort of "standing" pose. It's interesting that so many of the intermediate representations look like they could
+be versions of the same image.
