@@ -1,0 +1,53 @@
+What does AdaGrad do to boost performance?
+
+Adagrad "modifies the learning rate adaptively for each coefficient in a model, monotonically lowering the effective learning rate."
+I think that means starts with a high learning rate, then lowers the learning rate for each parameter individually,
+probably based on performance (perhaps using info from the model's loss function?)
+
+
+Tasks 1–3: Report your best hyperparameter settings and their resulting performance.
+
+Task 1:
+
+learning_rate=0.007
+steps=5000,
+batch_size=1000,
+hidden_units=[10, 10]
+Final RMSE (on training data):   65.39
+Final RMSE (on validation data): 64.15
+
+Task 2:
+
+Adagrad
+learning_rate=0.7)
+steps=5000,
+batch_size=1000,
+hidden_units=[10, 10]
+Final RMSE (on training data):   61.34
+Final RMSE (on validation data): 59.54
+
+Adam
+learning_rate=0.007),
+steps=5000,
+batch_size=1000,
+hidden_units=[10, 10]
+Final RMSE (on training data):   60.31
+Final RMSE (on validation data): 58.57
+
+I got lower final values than Google's solution, but I also started much lower RMSE and the curves looked different.
+I had similar learning rates, but I had a much larger step size and batch size (Google used steps=500 and batch_size=100.
+For the learning rates it used 0.5 and 0.009.) What is the significance of this? Do the step size and batch size look reasonable?
+What do you think of the curves? Is that pattern of decrease in RMSE over periods reasonable? (I have included png files of the graphs
+from my models and from Google's models so you can see what I'm talking about.)
+
+Task 3:
+
+my_optimizer=tf.train.AdagradOptimizer(learning_rate=0.15),
+steps=1000,
+batch_size=50,
+hidden_units=[10, 10]
+Final RMSE (on training data):   68.80
+Final RMSE (on validation data): 67.52
+
+
+Optional Challenge: You can skip this exercise.

@@ -1,0 +1,13 @@
+Would you rather use TensorFlow or Keras to build your models?
+
+I find Keras easier to use, TensorFlow seems more complicated with more manual steps.
+
+
+Tasks 1 & 2: Report your best hyper-parameter settings and their resulting performance on the testing dataset.
+
+learning_rate=0.001,
+steps=2000,
+batch_size=100,
+hidden_units=[10, 10]
+
+116.83 RMSE on the testing dataset (with my first attempt)
