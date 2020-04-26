@@ -1,0 +1,35 @@
+Task #1 — What are the biases present in the given dataset?
+
+Gender bias: more men than women represented (and more husbands than wives).
+High percentage of 0s in capital_gain and capital_loss (might be ok, but merits further review).
+Unclear how hours_per_week is stored. Minimum is 1 (which would not be enough for most jobs)
+and maximum is 99 (which is technically possible but seems very unlikely).
+
+Task #2 — Assess the potential bias in some other feature besides education level.
+
+I looked at hours per week on the x-axis and gender as the color/label. It looks like the
+majority of the distribution of hours per week falls within the 40-50 hour range, but there are still people on either side of that peak
+(more weight on the 0-40 side than the 50-100 side though). There are very few women working more than 50 hours a week, and in each bin
+with less than 40 hours per week, women are the majority. This might seem reasonable for 1994, but it could be that working women are
+underrepresented in this data. After all, we do know women are underrepresented in general. Interestingly, there are not many people at all in the
+0-10 bin, so unemployed people may be underrepresented in this dataset.
+
+Task #3 — Do as written.
+
+Task #4 — Do you find disparities when you look at race rather than gender? If so, which way to they skew?
+
+White:              Precision 0.7084, Recall 0.5526, False Positive Rate 0.0798
+Black:              Precision 0.6486, Recall 0.4286, False Positive Rate 0.0314
+
+Asian-Pac-Islander: Precision 0.7100, Recall 0.5868, False Positive Rate 0.1010
+Amer-Indian-Eskimo: Precision 0.7273, Recall 0.4211, False Positive Rate 0.0231
+Other:              Precision 0.7000, Recall 0.2917, False Positive Rate 0.0306
+
+First I should note the majority of the people in the data were white. There were some black people,
+but not many people in the other race categories. We can see that the recall and false positive rate are highest for white people
+(with the exception of Asian-Pac-Islander, which had higher recall). So the model is more likely to predict a high income for
+a white person than for a person of another race. (Unsurprising, since this matches the data the model was fed.) The model has
+the worst precision for black people.
+
+If recall is the most important metric, the disparities skew in favor of white people. If false positive rate is the most important metric,
+the disparities skew against white people.

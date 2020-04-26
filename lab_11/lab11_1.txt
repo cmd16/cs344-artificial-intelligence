@@ -1,0 +1,90 @@
+Questions:
+
+Task 1: Is a linear model ever preferable to a deep NN model?
+
+A linear model is simpler and faster than a deep NN model. So if the problem is simple enough for a linear model, it
+is probably better to use a linear model.
+
+Task 2: Does the NN model do better than the linear model?
+
+The neural network model does better.
+
+Task 3: Do embeddings do much good for sentiment analysis tasks?
+
+Training set metrics:
+accuracy 0.8
+accuracy_baseline 0.56
+auc 0.9155843
+auc_precision_recall 0.90340775
+average_loss 0.3708435
+label/mean 0.44
+loss 9.271088
+precision 0.71428573
+prediction/mean 0.49111497
+recall 0.90909094
+global_step 1000
+---
+WARNING: Entity <bound method _DNNModel.call of <tensorflow_estimator.python.estimator.canned.dnn._DNNModel object at 0x7fa60f071c88>> could not be transformed and will be executed as-is. Please report this to the AutoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: module 'gast' has no attribute 'Num'
+Test set metrics:
+accuracy 0.8
+accuracy_baseline 0.52
+auc 0.9070512
+auc_precision_recall 0.9225307
+average_loss 0.39604163
+label/mean 0.52
+loss 9.901041
+precision 0.78571427
+prediction/mean 0.54823464
+recall 0.84615386
+global_step 1000
+---
+
+As compared with the DNN model that had no embeddings, the DNN model with the embeddings got better precision
+but worse other metrics (e.g., lower accuracy, lower recall).
+
+Tasks 4–5: Name two words that have similar embeddings and explain why that makes sense.
+
+enjoyed and enjoyable: enjoyed is the verb, enjoyable is the adjective. They are both forms of the same word.
+Something you enjoyed is also something you might call enjoyable. So you could see the words in similar context.
+
+Task 6: Report your best hyper-parameters and their resulting performance.
+
+my_optimizer = tf.train.AdagradOptimizer(learning_rate=0.1)
+my_optimizer = tf.contrib.estimator.clip_gradients_by_norm(my_optimizer, 5.0)
+
+classifier = tf.estimator.DNNClassifier(
+  feature_columns=feature_columns,
+  hidden_units=[20,10],
+  optimizer=my_optimizer
+)
+
+classifier.train(
+  input_fn=lambda: _input_fn([train_path]),
+  steps=1000)
+
+Training set metrics:
+accuracy 0.81188
+accuracy_baseline 0.5
+auc 0.8939923
+auc_precision_recall 0.8918652
+average_loss 0.41937062
+label/mean 0.5
+loss 10.484265
+precision 0.783383
+prediction/mean 0.5432146
+recall 0.86216
+global_step 1000
+---
+Test set metrics:
+accuracy 0.79676
+accuracy_baseline 0.5
+auc 0.8806583
+auc_precision_recall 0.87799895
+average_loss 0.44343352
+label/mean 0.5
+loss 11.085838
+precision 0.7683959
+prediction/mean 0.54415256
+recall 0.8496
+global_step 1000
+---
