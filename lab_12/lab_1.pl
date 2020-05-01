@@ -63,7 +63,7 @@ harry is a quidditchPlayer, so he has a broom. harry has a wand. harry has a bro
 
 wizard(Y).
 ron.
-ron is the first entity Y that prolog found in the knowledge base for which Y is a wizard. If you type ; then you get harry. becuase harry is also a wizard.
+ron is the first atom Y that prolog found in the knowledge base for which Y is a wizard. If you type ; then you get harry. because harry is also a wizard.
 
 witch(Y).
 ERROR: Undefined procedure: witch/1 (DWIM could not correct goal)

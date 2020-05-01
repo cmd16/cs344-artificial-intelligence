@@ -61,5 +61,4 @@ Hermione = hermione ;
 Hermione = 'McGonagall' ;
 Hermione = rita_skeeter.
 
-Draw the search tree for the query magic(Hermione) .
 */
