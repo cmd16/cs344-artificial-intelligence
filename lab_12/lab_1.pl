@@ -1,13 +1,15 @@
 /**
 Excercise 1.4
 Explain why you built the representations as you did.
-Explain how Prolog comes up with its answers.
+
+For the most part I just wrote things following the way you are supposed to write things in Prolog and I don't know what else to say.
 */
 
 % Butch is a killer.
 killer(butch).
 
 % Mia and Marsellus are married.
+% I wrote some additional rules based on the meaning of "married" in the English language.
 married(mia, marsellus).
 married(X, Y) :- married(Y, X), X \= Y.
 married(X) :- married(X, _).
@@ -27,6 +29,7 @@ eats(jules, X) :- tasty(X).
 
 /**
 Exercise 1.5
+Explain how Prolog comes up with its answers.
 */
 
 wizard(ron).
