@@ -1,0 +1,29 @@
+Do exercise 7.2 in the text. Do your work on paper and then speculate on whether you could program the solution in Prolog (easily)? Explain why or why not?
+
+7.2 (Adapted from Barwise and Etchemendy (1993).) Given the following, can you prove
+that the unicorn is mythical? How about magical? Horned?
+If the unicorn is mythical, then it is immortal, but if it is not mythical, then it is a
+mortal mammal. If the unicorn is either immortal or a mammal, then it is horned.
+The unicorn is magical if it is horned.
+
+If the unicorn is mythical, then it is immortal, but if it is not mythical, then it is a
+mortal mammal. Given this fact and the fact that the unicorn is either mythical or not mythical, then we can conclude
+that the unicorn is either immortal or a mortal mammal. If the unicorn is a mortal mammal, then the unicorn is a mammal.
+So the unicorn is either immortal or a mammal. Since the unicorn is either immortal or a mammal, then the unicorn is horned.
+Since the unicorn is horned, the unicorn is magical.
+
+So we can prove that the unicorn is magical and that it is horned. However, we cannot prove that the unicorn is mythical.
+There is no fact in the knowledge base that includes "the unicorn is mythical" as part of its conclusion.
+And there is no way to get a contradiction by assuming that the unicorn is not mythical (at least, not that I can find).
+
+
+I could not solve this problem in Prolog easily. As far as I know Prolog doesn't have xor ("either or") built in,
+and if it does have xor built in I don't know about it. Also, the "mortal mammal" part is hard.
+If I recall correctly, it's not possible to have a conclusion (i.e., the part on the left when you write an if statement in Prolog)
+that involves more than one predicate. I could make a "mortalmammal" predicate,
+but then I would have to explain that "mortalmammal" means both mortal and mammal.
+And I'm not sure Prolog could make the step I did involving "the fact that the unicorn is either mythical or not mythical".
+There are a lot of pieces of the language of the knowledge base that break apart and combine in interesting ways that might
+be difficult to translate into Prolog.
+So while it might be possible to translate the information into Prolog, the translation would require significant work and so
+I say I could not program the solution easily.
