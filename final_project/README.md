@@ -14,3 +14,6 @@ then I saved the `random_reviews` object to a csv file that I called Yelp_restau
 - However, you could run this with other review data. 
 As long as you have a csv that has a column for "text" and a column for "stars" (where stars are inbetween 1 and 5), 
 all you need to change is the filename. (If the rows are not in random order you'll also want to randomize the order of rows.)
+
+## Where to read the report
+- `report.ipynb` contains the final report
